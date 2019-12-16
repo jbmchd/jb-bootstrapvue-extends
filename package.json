@@ -1,0 +1,28 @@
+{
+  "name": "@jbmchd-vue/jb-bootstrapvue-extends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbmchd/jb-bootstrapvue-extends.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbmchd/jb-bootstrapvue-extends/issues"
+  },
+  "homepage": "https://github.com/jbmchd/jb-bootstrapvue-extends#readme",
+  "dependencies": {
+    "inputmask": "^5.0.0",
+    "@mdi/font": "^4.6.95",
+    "moment": "^2.24.0",
+    "vuelidate": "^0.7.4",
+    "vue-loading-overlay": "^3.2.0",
+    "@jbmchd-vue/jb-v-global": "1.0.0"
+  }
+}
