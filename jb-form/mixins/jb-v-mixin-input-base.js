@@ -42,6 +42,11 @@ const inputBaseMixin = {
   created() {
     Object.assign(this, this.$attrs)
   },
+  watch: {
+    value(v) {
+      this._vmodel = v
+    }
+  },
   methods: {
     vmodel_masked(value) {
       if (value) {

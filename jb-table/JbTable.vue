@@ -5,7 +5,7 @@
           <slot name="header">
             <b-col>
               <jb-text v-model="pesquisar" placeholder="Pesquisar" >
-                <b-btn slot="append" variant="primary" :disabled="!pesquisar" @click="pesquisar = ''">X</b-btn>
+                <b-btn slot="append" variant="primary" :disabled="!pesquisar" @click="pesquisar = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
               </jb-text>
             </b-col> 
           </slot>

@@ -1,3 +1,5 @@
+import './config/sweetalert2.js'
+
 require('../jb-v-global')
 // require("./jb-alert");
 // require("./jb-btn");
