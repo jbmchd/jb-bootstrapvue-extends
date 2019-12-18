@@ -21,7 +21,7 @@ const inputBaseMixin = {
   },
 
   computed: {
-    _vmodel: {
+    vmodel: {
       get() {
         /**
           configurar como os valores devem ser exibidos para usuario
@@ -44,7 +44,7 @@ const inputBaseMixin = {
   },
   watch: {
     value(v) {
-      this._vmodel = v
+      this.vmodel = v
     }
   },
   methods: {
