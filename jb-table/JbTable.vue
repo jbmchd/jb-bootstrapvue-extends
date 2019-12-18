@@ -46,7 +46,7 @@
     <template #table-busy>
       <slot name="table-busy">
         <div class="text-center text-primary my-2">
-          <jb-loading :active="true" height.number="50" width.number="50">
+          <jb-loading :active="true" :color="loadingColor" height.number="50" width.number="50">
             <strong>Carregando dados, aguarde...</strong>
           </jb-loading>
         </div>
@@ -73,12 +73,13 @@ import globalMixin from "./../../jb-v-global/jb-v-mixin-global";
 export default {
   mixins: [globalMixin],
   props:{
-    filter:String,
+    filter: String,
+    loadingColor: { type: String, default: '#0079bf' }
   },
-  data () {
+  data() {
     return {
       isBusy: false,
-      pesquisar: null,
+      pesquisar: null
     }
   },
   created() {

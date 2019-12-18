@@ -8,6 +8,7 @@
     :filter="table.filter"
     show-empty
     :ref="bootstrapvue_ref('jb-table')"
+    :loading-color="loadingColor"
   >
 
   <template slot="header">
@@ -78,6 +79,7 @@ export default {
     podeDeletar:{type:Boolean, default:false},
 
     btnAddTexto:String,
+    loadingColor: { type: String, default: '#0079bf' },
 
     formOptions:Object,
     modalOptions:Object,
