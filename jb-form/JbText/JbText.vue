@@ -55,7 +55,7 @@ export default {
               value = this.currencyUs(value)
             } else if (this.mask == 'cpf') {
               value = value.replace(/[-_\.]/g, '')
-            } else if (this.mask == 'cnpj' || this.mask == 'cpf_cnpj') {
+            } else if (this.mask == 'cnpj' || this.mask == 'cpf_cnpj' || this.mask == 'cns') {
               value = value.replace(/[-\/_\.]/g, '')
             } else if (
               this.mask == 'percentage' ||

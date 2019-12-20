@@ -1,15 +1,15 @@
 <template>
 <div >
   <template>
+    <slot name="header">
       <b-row align-h="end" class="col-12 p-0 m-0">
-          <slot name="header">
-            <b-col>
-              <jb-text v-model="pesquisar" placeholder="Pesquisar" >
-                <b-btn slot="append" variant="primary" :disabled="!pesquisar" @click="pesquisar = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
-              </jb-text>
-            </b-col> 
-          </slot>
+        <b-col>
+          <jb-text v-model="pesquisar" placeholder="Pesquisar" >
+            <b-btn slot="append" variant="primary" :disabled="!pesquisar" @click="pesquisar = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
+          </jb-text>
+        </b-col> 
       </b-row>
+    </slot>
   </template>
 
   <b-table :ref="bootstrapvue_ref('jb-table')" v-on="this.$listeners" v-bind="this.$attrs" show-empty :filter="filter || pesquisar" >
@@ -106,6 +106,9 @@ export default {
     },
     cnpj(value, key, item){
       return this.$mascaraCNPJ(value)
+    },
+    cns(value, key, item){
+      return this.$mascaraCNS(value)
     },
   },
 

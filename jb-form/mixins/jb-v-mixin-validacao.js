@@ -12,6 +12,7 @@ const validacaoMixin = {
         cpf: v => this.$validar_cpf(v),
         cnpj: v => this.$validar_cnpj(v),
         cpf_cnpj: v => this.$validar_cpf_cnpj(v),
+        cns: v => this.$validar_cns(v),
         igualA: v => this.$igual_a(v)
       }
     }
@@ -33,6 +34,9 @@ const validacaoMixin = {
           break
         case 'maxLength':
           mensagem_erro = `Não digite mais que ${params} caracteres`
+          break
+        case 'cns':
+          mensagem_erro = `Digite um CNS válido`
           break
         case 'cpf':
           mensagem_erro = `Digite um CPF válido`

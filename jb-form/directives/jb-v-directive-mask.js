@@ -52,6 +52,9 @@ let mascaras_extendidas = {
   cep: {
     mask: '99999-999'
   },
+  cns: {
+    mask: '99.999-9'
+  },
   cpf: {
     mask: '999.999.999-99'
   },

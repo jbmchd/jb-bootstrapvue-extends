@@ -12,14 +12,21 @@
   >
 
   <template slot="header">
-    <b-col class="col-2">
-        <b-btn v-if="podeAdicionar" variant="outline-primary" dark class="mb-2" ref="btn-novo" @click="novo()"> <jb-icone>mdi mdi-plus-circle-outline</jb-icone> {{btnAddTexto || 'Adicionar'}}</b-btn>
-      </b-col>
-      <b-col class="col-4 offset-md-6">
-        <jb-text v-model="table.filter" placeholder="Pesquisar" >
-          <b-btn slot="append" variant="primary" :disabled="!table.filter" @click="table.filter = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
-        </jb-text>
-      </b-col> 
+    <b-row  class="col-12 p-0 m-0">
+      <slot name="header-action">
+        <b-col class="col-2">
+          <b-btn v-if="podeAdicionar" variant="outline-primary" dark class="mb-2" ref="btn-novo" @click="novo()"> <jb-icone>mdi mdi-plus-circle-outline</jb-icone> {{btnAddTexto || 'Adicionar'}}</b-btn>
+        </b-col>
+      </slot>
+      <jb-spacer></jb-spacer>
+      <slot name="header-search">
+        <b-col class="col-4 ">
+          <jb-text v-model="table.filter" placeholder="Pesquisar" >
+            <b-btn slot="append" variant="primary" :disabled="!table.filter" @click="table.filter = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
+          </jb-text>
+        </b-col> 
+      </slot>
+    </b-row>
   </template>
 
   <template v-slot:actions="{ index, item, field, value }" >
