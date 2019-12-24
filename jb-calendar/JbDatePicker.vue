@@ -1,13 +1,12 @@
 <template>
   <b-form-group :id="_id + '-group'" :label-for="_id">
+    <label v-if="!!label" class="d-block">{{label}}</label>
     <v-date-picker
       :ref="bootstrapvue_ref('v-date-picker')"
       v-on="$listeners"
       v-bind="this.$attrs"
       v-model.trim="$v.vmodel.$model"
-      :input-props="{
-        class: input_classes
-      }"
+      :input-props="getInputProps"
     >
     </v-date-picker>
 
@@ -24,8 +23,18 @@ import inputBaselMixin from "../jb-form/mixins/jb-v-mixin-input-base";
 
 export default {
   mixins: [inputBaselMixin],
-
+  props:{
+    label: String,
+    inputProps: Object
+  },
   computed: {
+    getInputProps(){
+      let props = this.inputProps ? this.inputProps : {}
+      props = Object.assign(props, {
+        class: this.input_classes
+      })
+      return props
+    },
     tem_erro() {
       return this.$v.vmodel.$error;
     },

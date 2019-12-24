@@ -96,8 +96,12 @@ export default {
       if(typeof formatter == 'function'){
         return formatter(value)
       }
-      
-      return this[formatter] ? this[formatter](value, key, item) : value
+      if(value) {
+        return this[formatter] ? this[formatter](value, key, item) : value
+      }
+      else {
+        return value
+      }
     },
     date(value, key, item){
       let date = moment(value)
