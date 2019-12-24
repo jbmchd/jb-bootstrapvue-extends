@@ -11,7 +11,7 @@
     :loading-color="loadingColor"
   >
 
-  <template slot="header">
+  <template #header>
     <b-row  class="col-12 p-0 m-0">
       <slot name="header-action">
         <b-col class="col-2">
@@ -22,7 +22,7 @@
       <slot name="header-search">
         <b-col class="col-4 ">
           <jb-text v-model="table.filter" placeholder="Pesquisar" >
-            <b-btn slot="append" variant="primary" :disabled="!table.filter" @click="table.filter = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
+            <b-btn #append variant="primary" :disabled="!table.filter" @click="table.filter = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
           </jb-text>
         </b-col> 
       </slot>

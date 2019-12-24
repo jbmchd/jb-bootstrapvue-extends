@@ -2,13 +2,23 @@
 <div >
   <template>
     <slot name="header">
-      <b-row align-h="end" class="col-12 p-0 m-0">
-        <b-col>
+      <b-row  class="col-12 p-0 m-0">
+
+      <slot name="header-left">
+        <b-col class="col-6"></b-col>
+      </slot>
+
+      <jb-spacer></jb-spacer>
+
+      <slot name="header-search">
+        <b-col class="col-4 ">
           <jb-text v-model="pesquisar" placeholder="Pesquisar" >
             <b-btn slot="append" variant="primary" :disabled="!pesquisar" @click="pesquisar = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
           </jb-text>
         </b-col> 
-      </b-row>
+      </slot>
+
+    </b-row>
     </slot>
   </template>
 
@@ -21,10 +31,7 @@
 
             <template v-if="field.formatter">
               <!-- TEM FORMATTER -->
-              <template v-if="typeof field.formatter == 'function'">
-                  {{field.formatter(item[field.key])}}
-              </template>
-              <template v-else>
+              <template>
                 {{formatter(field.formatter, item[field.key], field.key, item )}}
               </template>
             </template>
@@ -79,15 +86,17 @@ export default {
   data() {
     return {
       isBusy: false,
-      pesquisar: null
+      pesquisar: null,
     }
   },
-  created() {
-    // console.log(this);
-    
+  created() {    
   },
   methods: {
     formatter(formatter, value, key, item){
+      if(typeof formatter == 'function'){
+        return formatter(value)
+      }
+      
       return this[formatter] ? this[formatter](value, key, item) : value
     },
     date(value, key, item){
