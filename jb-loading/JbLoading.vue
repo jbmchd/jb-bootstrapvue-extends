@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <loading v-on="this.$listeners" v-bind="this.$attrs">
-      <template slot="after">
-        <div class="text-center">
-          <slot></slot>
-        </div>
-      </template>
-    </loading>
-  </div>
+  <loading v-on="this.$listeners" v-bind="this.$attrs">
+    <template slot="after">
+      <div class="text-center">
+        <slot></slot>
+      </div>
+    </template>
+  </loading>
 </template>
 
 <script>

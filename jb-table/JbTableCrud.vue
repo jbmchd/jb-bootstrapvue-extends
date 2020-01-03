@@ -20,7 +20,7 @@
       </slot>
       <jb-spacer></jb-spacer>
       <slot name="header-search">
-        <b-col class="col-4 ">
+        <b-col class="col-4">
           <jb-text v-model="table.filter" placeholder="Pesquisar" >
             <b-btn #append variant="primary" :disabled="!table.filter" @click="table.filter = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
           </jb-text>
@@ -35,7 +35,7 @@
           <slot name="actions-prepend" :item="item" :field="field" :value="value" :index="index" ></slot>
 
           <b-btn v-if="podeEditar" size="sm" variant="outline-warning" @click="editar(item, index)" class="py-1 px-3"> <jb-icone tooltip="Editar" > mdi mdi-pencil </jb-icone> </b-btn>
-          <b-btn v-if="podeAtivarInativar" size="sm" variant="outline-info" @click="ativarInativarConfirm(item, index)" class="py-1 px-3"> <jb-icone :tooltip="item.ativo ? 'Inativar' : 'Ativar'" > mdi {{ item.ativo ? 'mdi-arrow-down' : 'mdi-arrow-up'}} </jb-icone> </b-btn>
+          <b-btn v-if="podeAtivarInativar" size="sm" variant="outline-info" @click="ativarInativarConfirm(item, index)" class="py-1 px-3 mx-1"> <jb-icone :tooltip="item.ativo ? 'Inativar' : 'Ativar'" > mdi {{ item.ativo ? 'mdi-arrow-down' : 'mdi-arrow-up'}} </jb-icone> </b-btn>
           <b-btn v-if="podeDeletar" size="sm" variant="outline-danger" @click="deletarConfirm(item, index)" class="py-1 px-3"> <jb-icone tooltip="Deletar" > mdi mdi-delete </jb-icone> </b-btn>
 
           <slot name="actions-append" :item="item" :field="field" :value="value" :index="index"></slot>

@@ -5,13 +5,12 @@
       <b-row  class="col-12 p-0 m-0">
 
       <slot name="header-left">
-        <b-col class="col-6"></b-col>
       </slot>
 
       <jb-spacer></jb-spacer>
 
       <slot name="header-search">
-        <b-col class="col-4 ">
+        <b-col class="col-7">
           <jb-text v-model="pesquisar" placeholder="Pesquisar" >
             <b-btn slot="append" variant="primary" :disabled="!pesquisar" @click="pesquisar = ''"> <jb-icone>mdi mdi-close-circle-outline</jb-icone> </b-btn>
           </jb-text>
